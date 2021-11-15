@@ -38,4 +38,22 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style></style>
+<style>
+.index {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+  margin-top: 60px;
+}
+.index h2 {
+  font-size: 1.8em;
+  text-align: center;
+  margin-top: 0;
+}
+.index .ingredients {
+  margin: 30px auto;
+}
+.index .ingredients li {
+  display: inline-block;
+}
+</style>
