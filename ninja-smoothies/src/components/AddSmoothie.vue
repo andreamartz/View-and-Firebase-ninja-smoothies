@@ -16,6 +16,7 @@
         />
       </div>
       <div class="field center-align">
+        <p v-if="feedback" class="red-text">{{ feedback }}</p>
         <button class="btn pink">Add Smoothie</button>
       </div>
     </form>
@@ -29,18 +30,22 @@ export default {
     return {
       title: null,
       another: null,
-      ingredients: []
+      ingredients: [],
+      feedback: null
     };
   },
   methods: {
     AddSmoothie() {
-      console.log(this.title);
+      console.log("TITLE: ", this.title, "INGREDIENTS: ", this.ingredients);
     },
     addIngredient() {
       if (this.another) {
         this.ingredients.push(this.another);
         this.another = null;
+        this.feedback = null;
         console.log(this.ingredients);
+      } else {
+        this.feedback = "You must enter a value to add an ingredient";
       }
     }
   }
